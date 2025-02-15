@@ -9,7 +9,7 @@ import userRouter from "./routes/userRoutes.js";
 const app = express();
 const port = process.env.port || 4000;
 connectDB();
-const allowedOrigins = ["https://vercel.com/arfams-projects-6c92c5d6/user-auth-client/7k2Yejd1kXBVmb7tB1CwoFxLmUHX"];
+const allowedOrigins = ["https://user-auth-client-two.vercel.app"];
 
 app.use(express.json());
 app.use(cookieParser());
