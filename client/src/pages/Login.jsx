@@ -27,6 +27,7 @@ const Login = () => {
           setIsLoggedin(true);
           getUserData();
           navigate("/");
+          toast.success(data.message);
         } else {
           toast.error(data.message);
         }
@@ -39,6 +40,7 @@ const Login = () => {
           setIsLoggedin(true);
           getUserData();
           navigate("/");
+          toast.success(data.message);
         } else {
           toast.error(data.message);
         }
@@ -50,12 +52,7 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen px-6  bg-gradient-to-br from-blue-200 to-purple-200">
-      {/* <img
-        onClick={() => navigate("/")}
-        src={assets.logo}
-        alt="logo"
-        className="absolute left-5 sm:left-20 top-5 w-28 sm:w-32 cursor-pointer"
-      /> */}
+    
       <div className="bg-purple-150 p-10 rounded-lg shadow-lg w-100 text-indigo-300 text-sm">
         <h2 className="text-2xl font-semibold text-black text-center mb-3">
           {state === "Sign Up" ? "Create Account" : "Login "}

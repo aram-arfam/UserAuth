@@ -234,14 +234,14 @@ export const sendResetOtp = async (req, res) => {
 export const resetPassword = async (req, res) => {
   const { email, otp, newPassword } = req.body;
   if (!email || !otp || !newPassword) {
-    return res.json({ success: false, meassage: "Please Enter the Details" });
+    return res.json({ success: false, message: "Please Enter the Details" });
   }
 
   try {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.json({ success: false, meassage: "User not found" });
+      return res.json({ success: false, message: "User not found" });
     }
 
     if (user.resetOtp === "" || user.resetOtp !== otp) {

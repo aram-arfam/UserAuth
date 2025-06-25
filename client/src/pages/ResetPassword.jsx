@@ -37,10 +37,13 @@ const ResetPassword = () => {
         backendUrl + "/api/auth/send-reset-otp",
         { email }
       );
+      console.log(data);
       data.success ? toast.success(data.message) : toast.error(data.message);
       data.success && setIsEmailSent(true);
+      data.success && navigate("/reset-password");
     } catch (error) {
       toast.error(error.message);
+      console.log(error);
     }
   };
   const onSubmitOTP = async (e) => {
